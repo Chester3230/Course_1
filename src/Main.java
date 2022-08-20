@@ -21,10 +21,10 @@ public class Main {
      }
 
      toString(employees);
-        System.out.println("SUM :" + countSumSalary(employees));
-        System.out.println("MIN :" + getMinSalary(employees));
-        System.out.println("MAX :" + getMaxSalary(employees));
-        System.out.println("AVERAGE :" + getAverageSalary(employees));
+     System.out.println("SUM :" + countSumSalary(employees));
+     System.out.println("MIN :" + getMinSalary(employees));
+     System.out.println("MAX :" + getMaxSalary(employees));
+     System.out.println("AVERAGE :" + getAverageSalary(employees));
      getFullnames(employees);
 
     }
