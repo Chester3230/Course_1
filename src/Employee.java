@@ -1,10 +1,10 @@
 public class Employee {
 
    private String fullName;
-   int department;
-   int salary;
+  private int department;
+   private int salary;
 
-   public static int id;
+   private int id;
 
    public String getFullName() {
       return this.fullName;
@@ -18,10 +18,6 @@ public class Employee {
       return salary;
    }
 
-   public void setFullName(String fullName) {
-      this.fullName = fullName;
-   }
-
    public void setDepartment(int department) {
       this.department = department;
    }
@@ -30,10 +26,11 @@ public class Employee {
       this.salary = salary;
    }
 
-   public Employee(String fullName, int department, int salary){
+   public Employee(String fullName, int department, int salary, int id){
       this.fullName=fullName;
       this.department=department;
       this.salary=salary;
+      this.id = id;
    }
 
    @Override

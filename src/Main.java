@@ -1,9 +1,10 @@
 import java.util.Random;
 
 public class Main {
+    
+    private static Employee[] employees = new Employee[10];
     public static void main(String[] args) {
-
-     Employee[] employees = new Employee[10];
+        
      String[] fullnames = {
                 "Володин Виктор Павлович",
                 "Смирнов Валентин Павлович",
@@ -16,8 +17,8 @@ public class Main {
                 "Маврин Пётр Иванович",
                 "Павлов Никита Олегович"};
 
-     for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-         employees[Employee.id] = new Employee(fullnames[Employee.id], new Random().nextInt(5) +1, new Random().nextInt(100) + 300);
+     for (int i = 0; i < employees.length; i++){
+         employees[i] = new Employee(fullnames[i], new Random().nextInt(5) +1, new Random().nextInt(100) + 300, i);
      }
 
      toString(employees);
@@ -30,24 +31,24 @@ public class Main {
     }
 
     public static void toString(Employee[] employees){
-        for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-            System.out.println(employees[Employee.id]);
+        for ( int i = 0; i < employees.length; i++){
+            System.out.println(employees[i]);
         }
     }
 
     public static int countSumSalary(Employee[] employees){
         int sum = 0;
-        for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-           sum = sum + employees[Employee.id].getSalary();
+        for ( int i = 0; i < employees.length; i++){
+           sum = sum + employees[i].getSalary();
         }
         return sum;
     }
 
     public static int getMinSalary(Employee[] employees){
-        int min = 0;
-        for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-            if(min > employees[Employee.id].getSalary()){
-                min = employees[Employee.id].getSalary();
+        int min = getMaxSalary(employees) + 1;
+        for (int i = 0; i < employees.length; i++){
+            if(min > employees[i].getSalary()){
+                min = employees[i].getSalary();
             }
         }
         return min;
@@ -55,9 +56,9 @@ public class Main {
 
     public static int getMaxSalary(Employee[] employees){
         int max = 0;
-        for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-            if(max < employees[Employee.id].getSalary()){
-                max = employees[Employee.id].getSalary();
+        for (int i = 0; i < employees.length; i++){
+            if(max < employees[i].getSalary()){
+                max = employees[i].getSalary();
             }
         }
         return max;
@@ -69,8 +70,8 @@ public class Main {
     }
 
     public static void getFullnames(Employee[] employees){
-        for (Employee.id = 0; Employee.id < employees.length; Employee.id++){
-            System.out.println(employees[Employee.id].getFullName());
+        for (int i = 0; i < employees.length; i++){
+            System.out.println(employees[i].getFullName());
         }
     }
 }
