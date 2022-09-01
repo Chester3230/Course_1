@@ -1,5 +1,6 @@
 public class Employee {
 
+   private static int counter = 0;
    private String fullName;
   private int department;
    private int salary;
@@ -26,11 +27,11 @@ public class Employee {
       this.salary = salary;
    }
 
-   public Employee(String fullName, int department, int salary, int id){
+   public Employee(String fullName, int department, int salary){
       this.fullName=fullName;
       this.department=department;
       this.salary=salary;
-      this.id = id;
+      this.id = counter++;
    }
 
    @Override
@@ -39,6 +40,7 @@ public class Employee {
               "fullName='" + fullName + '\'' +
               ", department=" + department +
               ", salary=" + salary +
+              ", id=" + id +
               '}';
    }
 }
